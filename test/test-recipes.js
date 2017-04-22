@@ -32,8 +32,8 @@ describe('Recipes', function() {
         res.should.have.status(200);
         res.should.be.json;
         res.body.should.be.a('array');
-        res.body.length.should.be.at.least(3);
-        const expectedKeys = ['name', 'ingrediants'];
+        res.body.length.should.be.at.least(2);
+        const expectedKeys = ['name', 'ingredients'];
         res.body.forEach(function(item) {
           item.should.be.a('object');
           item.should.include.keys(expectedKeys);
@@ -65,7 +65,7 @@ describe('Recipes', function() {
     // The PUT update Data to be entered, correct?
     const updateData = {
       name: 'foo',
-      checked: true
+      ingredients: ['item1', 'item2', 'item3']
     };
 
     return chai.request(app)
