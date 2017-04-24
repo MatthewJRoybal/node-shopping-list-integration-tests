@@ -8,7 +8,6 @@ const shoppingListRouter = require('./shoppingListRouter');
 const recipesRouter = require('./recipesRouter');
 
 // log the http layer
-// testing travisCI
 app.use(morgan('common'));
 
 app.use(express.static('public'));
